@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-use Illuminate\Support\Facades\Auth;
 use JsonException;
 use JsonRpc\Client;
 
@@ -27,8 +26,6 @@ class BalanceRepository
      */
     public function getBalance(int $userId): array
     {
-
-
         $this->client->call('balance.userBalance', ["user_id" => $userId]);
 
         $data = [];
